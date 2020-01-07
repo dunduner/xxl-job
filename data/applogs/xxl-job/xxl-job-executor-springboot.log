@@ -1,0 +1,22 @@
+2020-01-07 10:01:25,834 INFO [Thread-21] c.x.r.r.i.r.XxlRpcReferenceBean [XxlRpcReferenceBean.java : 165] >>>>>>>>>>> xxl-job, invoke error, address:http://127.0.0.1:8080/xxl-job-admin/api, XxlRpcRequestXxlRpcRequest{requestId='b1f60602-8427-4474-b91a-c306f1c58449', createMillisTime=1578362483830, accessToken='', className='com.xxl.job.core.biz.AdminBiz', methodName='registry', parameterTypes=[class com.xxl.job.core.biz.model.RegistryParam], parameters=[RegistryParam{registGroup='EXECUTOR', registryKey='executorDemo', registryValue='127.0.0.1:9999'}], version='null'}
+2020-01-07 10:01:25,834 INFO [Thread-21] c.x.j.c.t.ExecutorRegistryThread [ExecutorRegistryThread.java : 57] >>>>>>>>>>> xxl-job registry error, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='executorDemo', registryValue='127.0.0.1:9999'}
+com.xxl.rpc.util.XxlRpcException: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.eclipse.jetty.io.SelectorManager.doFinishConnect(SelectorManager.java:355)
+	at org.eclipse.jetty.io.ManagedSelector.processConnect(ManagedSelector.java:206)
+	at org.eclipse.jetty.io.ManagedSelector.access$1400(ManagedSelector.java:60)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.processSelected(ManagedSelector.java:489)
+	at org.eclipse.jetty.io.ManagedSelector$SelectorProducer.produce(ManagedSelector.java:352)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produceTask(EatWhatYouKill.java:357)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:181)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:132)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:748)
+
+	at com.xxl.rpc.remoting.invoker.reference.XxlRpcReferenceBean$1.invoke(XxlRpcReferenceBean.java:161)
+	at com.sun.proxy.$Proxy53.registry(Unknown Source)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
